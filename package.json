@@ -1,0 +1,23 @@
+{
+  "name": "pact-parser",
+  "version": "0.0.1",
+  "description": "This application is devoted to parsing json files that represent [pacts](https://github.com/pact-foundation/pact-specification), spawning express server and replaying responses for requests read from pact files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ichyr/pact-parser.git"
+  },
+  "keywords": [
+    "pact",
+    "js"
+  ],
+  "author": "ichyr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ichyr/pact-parser/issues"
+  },
+  "homepage": "https://github.com/ichyr/pact-parser"
+}
