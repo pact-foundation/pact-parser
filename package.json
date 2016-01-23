@@ -19,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/ichyr/pact-parser/issues"
   },
-  "homepage": "https://github.com/ichyr/pact-parser"
+  "homepage": "https://github.com/ichyr/pact-parser",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "jscs": "^2.8.0",
+    "mocha": "^2.3.4",
+    "nodemon": "^1.8.1",
+    "rimraf": "^2.5.1",
+    "sinon": "^1.17.2"
+  }
 }
