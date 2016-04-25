@@ -28,5 +28,9 @@
     "nodemon": "^1.8.1",
     "rimraf": "^2.5.1",
     "sinon": "^1.17.2"
+  },
+  "dependencies": {
+    "glob": "^6.0.4",
+    "yargs": "^3.32.0"
   }
 }
