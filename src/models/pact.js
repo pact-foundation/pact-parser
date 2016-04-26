@@ -2,7 +2,7 @@
 
 var Interaction = require('./interaction');
 
-module.exports = function Pact(options) {
+function Pact(options) {
 	this.provider = options.provider;
 	this.consumer = options.consumer;
 	this.interactions = options.interactions.map(
@@ -12,3 +12,5 @@ module.exports = function Pact(options) {
 	);
 	this.metadata = options.metadata;
 };
+
+module.exports = Pact; 

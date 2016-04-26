@@ -3,7 +3,7 @@
 var Request = require('./request');
 var Response = require('./response');
 
-module.exports = function Interaction(options) {
+function Interaction(options) {
     this.provider_state = options.provider_state;
     this.description = options.description;
     this.request = new Request(options.request);
@@ -11,3 +11,6 @@ module.exports = function Interaction(options) {
 };
 
 // define Interaction methods in prototype
+
+module.exports = Interaction;
+
