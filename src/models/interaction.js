@@ -3,7 +3,7 @@
 var Request = require('./request');
 var Response = require('./response');
 
-exports.Interaction = function (options) {
+module.exports = function Interaction(options) {
     this.provider_state = options.provider_state;
     this.description = options.description;
     this.request = new Request(options.request);

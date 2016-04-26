@@ -2,7 +2,7 @@
 
 var Interaction = require('./interaction');
 
-exports.Pact = function (options) {
+module.exports = function Pact(options) {
 	this.provider = options.provider;
 	this.consumer = options.consumer;
 	this.interactions = options.interactions.map(

@@ -1,6 +1,6 @@
 'use strict';
 
-exports.Request = function (options) {
+module.exports = function Request(options) {
     this.method = options.method.toLowerCase();
     this.path = options.path;
     this.query = options.query;

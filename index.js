@@ -16,15 +16,10 @@ glob.sync(argv.path).forEach(function (file) {
 });
 
 // Digest the pact files into array of pact objects
-var pactObject = require('src/pact.js');
+var PactObject = require('./src/models/pact.js');
 pactsFiles.forEach(function (pactFile) {
- pacts.push(new pactObject(pactFile));
-});
-
-console.log(pacts.length);
-
-
-// 
+  pacts.push(new PactObject(pactFile));
+}); 
 
 // Spawn the express server
 
