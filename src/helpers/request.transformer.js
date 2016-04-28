@@ -2,7 +2,7 @@
 
 function RequestTransformer(request) {
   var result = {};
-  result.method = request.method.toLowerCase();
+  result.method = request.method;
   result.path = request.url;
   result.query = request.query;
   result.headers = request.headers;
