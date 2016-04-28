@@ -1,8 +1,8 @@
 'use strict';
 
-var Request = require('./request');
-var Response = require('./response');
-var ResponseTransformer = require('../helpers/request.transformer.js');
+var Request = require('./request'),
+    Response = require('./response'),
+    ResponseTransformer = require('../helpers/request.transformer.js');
 
 function Interaction(options) {
     options.request = ResponseTransformer(options.request);
