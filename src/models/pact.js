@@ -14,12 +14,12 @@ function Pact(options) {
 };
 
 Pact.prototype.match = function (request) {
-	var result;
-	this.interactions.forEach(function (interaction) {
-		result = interaction.match(request);
+	var result, i;
+	for( i = 0 ; i < this.interactions.length; i++ ) {
+		result = this.interactions[i].match(request);
 		if (result) return result;
-  });
-  return;
+	}
+  return result;
 };
 
 module.exports = Pact; 

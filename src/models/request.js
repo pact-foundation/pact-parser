@@ -3,7 +3,7 @@
 var _ = require('underscore');
 
 function Request(options) {
-    this.method = options.method.toLowerCase();
+    this.method = options.method && options.method.toLowerCase();
     this.path = options.path;
     this.query = options.query;
     this.headers = options.headers;
@@ -12,6 +12,11 @@ function Request(options) {
 
 Request.prototype.match = function (request) {
     // todo throw an error if request is not an of Request type object
+    
+    if(request.constructor !== Request) { 
+        request = new Request(request);
+    }
+    
     var isMethodTheSame = request.method && request.method.toLowerCase();
     isMethodTheSame = _.isEqual(this.method, isMethodTheSame);
      

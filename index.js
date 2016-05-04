@@ -27,6 +27,7 @@ var app = express();
 app.use(bodyParser.json());
 
 function pactChecker(res, req) {
+  var response = pacts.match(res);
   
 }
 

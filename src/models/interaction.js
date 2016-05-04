@@ -18,7 +18,7 @@ Interaction.prototype.match = function (request) {
         return this.response;
     }
     return;
-}
+};
 
 module.exports = Interaction;
 
