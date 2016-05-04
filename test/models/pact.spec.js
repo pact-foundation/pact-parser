@@ -38,6 +38,27 @@ describe('Models', function () {
 			it('.metadata', function () {
 				expect(instance.metadata).to.deep.equal(options.metadata);
 			});
+
+			it('.match', function () {
+				expect(instance.match).to.be.a('function');
+			});
+		});
+
+		describe('public API', function () {
+
+      var instance,
+        pactFiles = [PactMock];
+
+      beforeEach(function () {
+        instance = new Pact(PactMock);
+      });
+
+      describe('.match', function () {
+
+        it('should return undefined if no request matches', function () {
+          expect(instance.match({})).to.equal(undefined);
+        });
+			});
 		});
 		});
 });

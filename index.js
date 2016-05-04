@@ -25,6 +25,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json());
+
+function pactChecker(res, req) {
+  
+}
+
 app.listen(pactConfig.PORT, function () {
   console.log("Server listening on: http://localhost:%s", pactConfig.PORT);
 });

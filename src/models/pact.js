@@ -13,4 +13,13 @@ function Pact(options) {
 	this.metadata = options.metadata;
 };
 
+Pact.prototype.match = function (request) {
+	var result;
+	this.interactions.forEach(function (interaction) {
+      result = interaction.match(request);
+      if (result) return result;
+  });
+  return;
+}
+
 module.exports = Pact; 

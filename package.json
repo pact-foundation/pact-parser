@@ -33,6 +33,7 @@
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "glob": "^6.0.4",
+    "underscore": "^1.8.3",
     "yargs": "^3.32.0"
   }
 }

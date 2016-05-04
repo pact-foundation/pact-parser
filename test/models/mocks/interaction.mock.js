@@ -1,6 +1,9 @@
+var RequestMock = require('./request.mock.js');
+var ResponseMock = require('./response.mock.js');
+
 module.exports = {
   provider_state: "test",
   description: "test",
-  request: { method: "DELETE" },
-  response: { body: { test: 123 } }
+  request: RequestMock,
+  response: ResponseMock
 };
