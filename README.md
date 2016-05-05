@@ -1,5 +1,7 @@
 # Pact-parser
 
+![TravisCI Master branch status](https://travis-ci.org/ichyr/pact-parser.svg?branch=master)
+
 This application is devoted to parsing json files that represent [pacts](https://github.com/pact-foundation/pact-specification), spawning express server and replaying responses for requests read from pact files.
 
 # Pact short introduction
