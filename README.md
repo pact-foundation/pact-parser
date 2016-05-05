@@ -8,5 +8,10 @@ This application is devoted to parsing json files that represent [pacts](https:/
 
 # ToDo List
 
+1. 
+2. 
+
+# Done List
+
 1. Simple json file parser that is able to respond to listed requests;
 2. 
