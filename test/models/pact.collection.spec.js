@@ -57,7 +57,6 @@ describe('Models', function () {
           expect(res.status).to.equal(temp.response.status);
         });
 
-
       });
 
     });

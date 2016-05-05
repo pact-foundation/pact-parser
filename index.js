@@ -26,10 +26,16 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json());
 
-function pactChecker(res, req) {
-  var response = pacts.match(res);
-  
+function pactChecker(req, res) {
+  var response = pacts.match(req);
+  if (response) {
+    res.status(response.status).send(response.body);  
+  } else {
+    res.status(500).send("No interaction found for your request");
+  }  
 }
+
+app.use(pactChecker);
 
 app.listen(pactConfig.PORT, function () {
   console.log("Server listening on: http://localhost:%s", pactConfig.PORT);
