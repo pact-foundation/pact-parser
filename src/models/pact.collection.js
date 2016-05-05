@@ -10,11 +10,11 @@ function PactCollection(pactFiles) {
 
 PactCollection.prototype.match = function (request) {
   var result, i;
-  
-  for( i = 0 ; i < this.pacts.length; i++ ) {
-		    result = this.pacts[i].match(request);
-		    if (result) return result;
-	  }
+
+  for (i = 0; i < this.pacts.length; i++) {
+    result = this.pacts[i].match(request);
+    if (result) return result;
+  }
   return;
 };
 

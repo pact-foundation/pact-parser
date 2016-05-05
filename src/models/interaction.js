@@ -15,8 +15,8 @@ function Interaction(options) {
 
 Interaction.prototype.match = function (request) {
   if (this.request.match(request)) {
-      return this.response;
-    }
+    return this.response;
+  }
   return;
 };
 

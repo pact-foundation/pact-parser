@@ -14,7 +14,7 @@ describe('Helpers', function () {
     };
 
     it('should parse data from request', function () {
-      var e = request; 
+      var e = request;
       var actual = RequestTransformer(request);
       expect(actual.method).to.equal(e.method);
       expect(actual.path).to.equal(e.path);

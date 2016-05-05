@@ -12,8 +12,8 @@ function Request(options) {
 
 Request.prototype.match = function (request) {
   if (request.constructor !== Request) {
-      request = new Request(request);
-    }
+    request = new Request(request);
+  }
 
   var isMethodTheSame = request.method && request.method.toLowerCase();
   isMethodTheSame = _.isEqual(this.method, isMethodTheSame);

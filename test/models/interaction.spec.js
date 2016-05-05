@@ -39,7 +39,7 @@ describe('Models', function () {
         var temp = new Response(options.response);
         expect(instance.response).to.deep.equal(temp);
       });
-            
+
       it('.match', function () {
         expect(instance.match).to.be.a('function');
       });
