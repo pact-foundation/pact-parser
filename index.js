@@ -31,14 +31,14 @@ function pactChecker(req, res) {
   if (response) {
     res.status(response.status).send(response.body);  
   } else {
-    res.status(500).send("No interaction found for your request");
+    res.status(500).send('No interaction found for your request');
   }  
 }
 
 app.use(pactChecker);
 
 app.listen(pactConfig.PORT, function () {
-  console.log("Server listening on: http://localhost:%s", pactConfig.PORT);
+  console.log('Server listening on: http://localhost:%s', pactConfig.PORT);
 });
 
 
