@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/**/*.spec.js",
+    "test:cover": "istanbul cover _mocha -- test/**/*.spec.js",
     "debug_test": "mocha --debug-brk test/**/*.spec.js"
   },
   "repository": {
