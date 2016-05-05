@@ -1,0 +1,4 @@
+testData/
+.vscode/
+coverage/
+node_modules/

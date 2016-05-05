@@ -12,9 +12,10 @@ This application is devoted to parsing json files that represent [pacts](https:/
 # ToDo List
 
 1. Fix ESLINT problem
-2. 
+2. enable code climate
+4. 
 
 # Done List
 
 1. Simple json file parser that is able to respond to listed requests;
-2. 
+2. add code coverage
