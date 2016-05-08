@@ -39,8 +39,8 @@ app.use(pactChecker);
 
 /*eslint no-console: 0 */
 
-app.listen(pactConfig.PORT, function () {
-  console.log('Server listening on: http://localhost:%s', pactConfig.PORT);
+app.listen(argv.port || pactConfig.PORT, function () {
+  console.log('Server listening on: http://localhost:%s', argv.port || pactConfig.PORT);
 });
 
 
