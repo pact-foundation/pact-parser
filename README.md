@@ -12,8 +12,8 @@ Pacts are great at building the contracts for consumer-provider interaction, but
 1. [Pact js consumer dsl](https://github.com/DiUS/pact-consumer-js-dsl) - whose primary goal is to describe the pacts and make requests to pact mock service.
 2. [Pact mock service](https://github.com/bethesque/pact-mock_service) - whose main purpose is to create pacts and very that they are generated.
  
- As **pact-mock-service*** is in-memory structure we should every time we would like to run tests generate from scratch all pact files. This is not very productive as pacts change a lot less frequent than test files are updates. Thus we need application that can run in background and act like server for each listed in pacts interaction pair: 
- **if we query it with listed in pact files request -> we recieve correspondent response**. 
+As **pact-mock-service*** is in-memory structure we should every time we would like to run tests generate from scratch all pact files. This is not very productive as pacts change a lot less frequent than test files are updates. Thus we need application that can run in background and act like server for each listed in pacts interaction pair: 
+**if we query it with listed in pact files request -> we recieve correspondent response**. 
 
 # Pact short introduction
 
