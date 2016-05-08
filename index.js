@@ -37,7 +37,7 @@ function pactChecker(req, res) {
 
 app.use(pactChecker);
 
-/*eslint no-console: ["error", { allow: ["log"] }] */
+/*eslint no-console: 0 */
 
 app.listen(pactConfig.PORT, function () {
   console.log('Server listening on: http://localhost:%s', pactConfig.PORT);
