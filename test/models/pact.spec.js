@@ -57,6 +57,13 @@ describe('Models', function () {
         it('should return undefined if no request matches', function () {
           expect(instance.match({})).to.equal(undefined);
         });
+        
+        it('should return response if request matched', function () {
+          var temp = PactMock.interactions[0],
+            res = instance.match(temp.request);
+          expect(res.status).to.equal(temp.response.status);
+        });
+        
       });
     });
   });

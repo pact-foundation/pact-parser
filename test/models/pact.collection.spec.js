@@ -49,7 +49,6 @@ describe('Models', function () {
           expect(instance.match({ method: 'DELETE' })).to.equal(undefined);
         });
 
-
         it('should return response of the matching request', function () {
           var temp = PactMock.interactions[0],
             res = instance.match(temp.request);
