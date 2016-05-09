@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - "5.10"
   
-script: "npm run-script test-travis"
+script: "npm run-script test:travis"
   
 addons:
   code_climate:
