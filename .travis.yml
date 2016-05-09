@@ -4,10 +4,6 @@ node_js:
   - "5.10"
   
 script: "npm run-script test:travis"
-  
-addons:
-  code_climate:
-      repo_token: 9152b582ae50dcfeb2007b820ee9426593b71921efab10c63b6a0a5b7e67388f
       
 after_script:
-  - codeclimate-test-reporter < ./coverage/lcov.info
+  - ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info

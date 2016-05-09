@@ -2,6 +2,7 @@
 
 ![TravisCI Master branch status](https://travis-ci.org/ichyr/pact-parser.svg?branch=master) 
 [![Code Climate](https://codeclimate.com/github/ichyr/pact-parser/badges/gpa.svg)](https://codeclimate.com/github/ichyr/pact-parser)
+[![Test Coverage](https://codeclimate.com/github/ichyr/pact-parser/badges/coverage.svg)](https://codeclimate.com/github/ichyr/pact-parser/coverage)
 
 This application is devoted to parsing json files that represent [pacts](https://github.com/pact-foundation/pact-specification), spawning express server and replaying responses for requests read from pact files.
 
