@@ -24,21 +24,19 @@ Request.prototype.match = function (request) {
         // https://github.com/realestate-com-au/pact/wiki/Matching-gotchas
         // #but-pact-breaks-postels-law-for-request-headers
         areAllExpectationHeadersPesentInRequest(this.headers, request.headers) &&
-        // https://github.com/realestate-com-au/pact/wiki/Matching-gotchas#
-        // an-empty-hash-in-the-response-means-allow-any-hash
         _.isEqual(this.body, request.body);
 };
 
 function areAllExpectationHeadersPesentInRequest(expHeaders, reqHeaders) {
   for(var entry in expHeaders) {
     // https://nodejs.org/api/http.html#http_message_headers
+    // ... Header names are lower-cased. ...
     var temp = entry.toLowerCase();
     if ( reqHeaders[temp] !== expHeaders[entry] ) {
-      console.log('match');
       return false;
     }
   }
   return true;
-}
+} 
 
 module.exports = Request;

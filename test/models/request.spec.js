@@ -2,16 +2,17 @@
 
 var expect = require('chai').expect,
   Request = require('../../src/models/request.js'),
-  RequestMock = require('./mocks/request.mock.js');
+  RequestMock = require('./mocks/request.mock.js'),
+  _ = require('underscore');
 
 describe('Models', function () {
 
   describe('Request', function () {
 
-    var instance,
-      options = RequestMock;
+    var instance, options;
 
     beforeEach(function () {
+      options = RequestMock;
       instance = new Request(options);
     });
 
@@ -47,6 +48,7 @@ describe('Models', function () {
 
         beforeEach(function () {
           testObject = { complete: { test: { case: 123 } } };
+          options = JSON.parse(JSON.stringify(RequestMock));
           request = new Request(options);
         });
 
@@ -78,12 +80,19 @@ describe('Models', function () {
           var result = instance.match(request);
           expect(result).to.be.false;
         });
-
-        it('should fail if headers differs', function () {
-          request.headers = { 'SomeHeader': 123 };
+                
+        it('should pass if all expectated headers are present', function () {
+          _.extend(request, {'SomeHeader': 123});
+          var result = instance.match(request);
+          expect(result).to.be.true;
+        });
+        
+        it('should pass if not all expectated headers are present', function () {
+          instance.headers['SomeHeader'] = 123 ;
           var result = instance.match(request);
           expect(result).to.be.false;
         });
+        
 
         it('should fail if body differs', function () {
           request.body = testObject;
