@@ -13,7 +13,7 @@
         "method": "get",
         "path": "/alligators/Mary",
         "headers": {
-          "Accept": "text/html"
+          "Accept": "application/json"
         }
       },
       "response": {

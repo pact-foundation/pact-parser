@@ -15,9 +15,17 @@ function PactParser(pactFiles, port) {
 
   function pactChecker(req, res) {
     var response = pacts.match(req);
+    
+    console.log('=> ', req.url);
+    console.log(JSON.stringify(req.body));
+    console.log(JSON.stringify(req.headers));
     if (response) {
+      console.log('<= ', response.status);
+      console.log(JSON.stringify(response.body));      
       res.status(response.status).send(response.body);
     } else {
+      console.log('<= ', 500);
+      console.log(JSON.stringify('No interaction found for your request'));   
       res.status(500).send('No interaction found for your request');
     }
   }

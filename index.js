@@ -11,7 +11,9 @@ if (!argv.path) {
 }
 
 // Read the pact files into array
+console.log('Parsing files:');
 glob.sync(argv.path).forEach(function (file) {
+  console.log(file);
   pactFiles.push(require(path.resolve(file)));
 });
 
