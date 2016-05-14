@@ -1,5 +1,7 @@
 # Pact-parser
 
+[![Join the chat at https://gitter.im/ichyr/pact-parser](https://badges.gitter.im/ichyr/pact-parser.svg)](https://gitter.im/ichyr/pact-parser?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ![TravisCI Master branch status](https://travis-ci.org/ichyr/pact-parser.svg?branch=master) 
 [![Code Climate](https://codeclimate.com/github/ichyr/pact-parser/badges/gpa.svg)](https://codeclimate.com/github/ichyr/pact-parser)
 [![Test Coverage](https://codeclimate.com/github/ichyr/pact-parser/badges/coverage.svg)](https://codeclimate.com/github/ichyr/pact-parser/coverage)
