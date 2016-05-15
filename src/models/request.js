@@ -25,17 +25,8 @@ Request.prototype.match = function (request) {
     _.isEqual(this.path, request.path) &&
     _.isEqual(decodeURIComponent(this.query), decodeURIComponent(request.query)) &&
     // https://github.com/realestate-com-au/pact/wiki/Matching-gotchas
-    areAllExpectationHeadersPesentInRequest(this.headers, request.headers) &&
+    helpers.areAllExpectationHeadersPesentInRequest(this.headers, request.headers) &&
     _.isEqual(this.body, request.body);
 };
-
-function areAllExpectationHeadersPesentInRequest(expHeaders, reqHeaders) {
-  for (var entry in expHeaders) {
-    if (reqHeaders[entry] !== expHeaders[entry]) {
-      return false;
-    }
-  }
-  return true;
-}
 
 module.exports = Request;

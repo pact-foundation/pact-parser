@@ -20,7 +20,16 @@ function initialHeadersTransform(headers) {
   });
 }
 
+function fieldsContinedInOtherObject(expHeaders, reqHeaders) {
+  for (var entry in expHeaders) {
+    if (reqHeaders[entry] !== expHeaders[entry]) {
+      return false;
+    }
+  }
+  return true;
+}
+
 module.exports = {
   makeHeaderNamesLowerCaseRemoveSpaces: initialHeadersTransform,
-
+  areAllExpectationHeadersPesentInRequest: fieldsContinedInOtherObject
 };
