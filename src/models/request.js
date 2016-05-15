@@ -2,12 +2,25 @@
 
 var _ = require('underscore');
 
+// Header names should be in lower case
+function makeHeaderNamesLoweCase(headers) {
+  Object.keys(headers).forEach(function(key) {
+    headers[key.toLowerCase()] = headers[key];
+    if (key !== key.toLowerCase()) {
+      delete headers[key];  
+    }    
+  });
+}
+
+
 function Request(options) {
   this.method = options.method && options.method.toLowerCase();
   this.path = options.path;
   this.query = options.query || '';
   this.headers = options.headers || {};
   this.body = options.body || {};
+  
+  makeHeaderNamesLoweCase(this.headers);
 }
 
 Request.prototype.match = function (request) {
@@ -20,7 +33,7 @@ Request.prototype.match = function (request) {
 
   return isMethodTheSame &&
     _.isEqual(this.path, request.path) &&
-    _.isEqual(decodeURI(this.query), decodeURI(request.query)) &&
+    _.isEqual(decodeURIComponent(this.query), decodeURIComponent(request.query)) &&
     // https://github.com/realestate-com-au/pact/wiki/Matching-gotchas
     // #but-pact-breaks-postels-law-for-request-headers
     areAllExpectationHeadersPesentInRequest(this.headers, request.headers) &&
