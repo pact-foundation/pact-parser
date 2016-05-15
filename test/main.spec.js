@@ -14,7 +14,7 @@ glob.sync(config.path).forEach(function (file) {
   
 app = app(pactFiles);
   
-describe('GET /alligators/Mary', function() {
+describe.only('GET /alligators/Mary', function() {
   it('respond with json', function(done) {
     request(app)
       .get('/alligators/Mary')
