@@ -51,10 +51,6 @@ function areAllExpectationHeadersPesentInRequest(expHeaders, reqHeaders) {
       req = reqHeaders[entry],
       exp = expHeaders[entry];
 
-    if (reqHeaders[entry].indexOf('alligators') > -1) {
-      1 + 1;
-    }
-
     if (req !== exp) {
       return false;
     }
