@@ -10,7 +10,7 @@ var expect = require('chai').expect,
 
 describe('Pact specification v.1.0 compliance', function () {
   // todo extract this into some kind of configuration
-  var pactSpecPath = 'testData/pact.spec.v.1.0/';
+  var pactSpecPath = 'test/specification/version.1.0';
 
   describe('Request', function () {
     var requestFiles = [],
