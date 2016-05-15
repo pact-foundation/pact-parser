@@ -32,8 +32,15 @@ function areAllExpectationHeadersPesentInRequest(expHeaders, reqHeaders) {
   for (var entry in expHeaders) {
     // https://nodejs.org/api/http.html#http_message_headers
     // ... Header names are lower-cased. ...
-    var temp = entry.toLowerCase();
-    if (reqHeaders[temp] !== expHeaders[entry]) {
+    var temp = entry.toLowerCase(),
+      req = reqHeaders[temp],
+      exp = expHeaders[entry].replace(' ', '');
+      
+      if ( req != undefined) {
+        req = req.replace(' ', '');
+      }
+      
+    if (req !== exp) {
       return false;
     }
   }
