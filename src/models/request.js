@@ -6,9 +6,10 @@ var _ = require('underscore');
 function makeHeaderNamesLowerCaseRevomeSpaces(headers) {
   Object.keys(headers).forEach(function (key) {
     // remove spaces in values after commas
-    headers[key] = headers[key].replace(', ', ',');
+    headers[key] = headers[key].toString().replace(', ', ',');
     
     // Header names should be in lower case
+    // https://nodejs.org/api/http.html#http_message_headers
     headers[key.toLowerCase()] = headers[key];
     if (key !== key.toLowerCase()) {
       delete headers[key];
@@ -45,13 +46,7 @@ Request.prototype.match = function (request) {
 
 function areAllExpectationHeadersPesentInRequest(expHeaders, reqHeaders) {
   for (var entry in expHeaders) {
-    // https://nodejs.org/api/http.html#http_message_headers
-    // ... Header names are lower-cased. ...
-    var temp = entry.toLowerCase(),
-      req = reqHeaders[entry],
-      exp = expHeaders[entry];
-
-    if (req !== exp) {
+    if (reqHeaders[entry] !== expHeaders[entry]) {
       return false;
     }
   }

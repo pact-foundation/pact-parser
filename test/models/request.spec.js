@@ -76,7 +76,7 @@ describe('Models', function () {
         });
 
         it('should fail if query differs', function () {
-          request.query = "alligator=Mary&hippo=John";
+          request.query = 'alligator=Mary&hippo=John';
           var result = instance.match(request);
           expect(result).to.be.false;
         });

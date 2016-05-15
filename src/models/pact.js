@@ -1,7 +1,7 @@
 'use strict';
 
 var Interaction = require('./interaction'),
-  requestMatchHelper = require('../helpers/request.match.js');
+  requestsMatchHelper = require('../helpers/requests.match.js');
 
 function Pact(options) {
   this.provider = options.provider;
@@ -15,7 +15,7 @@ function Pact(options) {
 }
 
 Pact.prototype.match = function (request) {
-  return requestMatchHelper(this.interactions, request);  
+  return requestsMatchHelper(this.interactions, request);  
 };
 
 module.exports = Pact; 

@@ -1,7 +1,7 @@
 'use strict';
 
 var Pact = require('./pact.js'),
-  requestMatchHelper = require('../helpers/request.match.js');
+  requestsMatchHelper = require('../helpers/requests.match.js');
 
 function PactCollection(pactFiles) {
   this.pacts = pactFiles.map(function (pactFile) {
@@ -10,7 +10,7 @@ function PactCollection(pactFiles) {
 }
 
 PactCollection.prototype.match = function (request) {
-  return requestMatchHelper(this.pacts, request);
+  return requestsMatchHelper(this.pacts, request);
 };
 
 module.exports = PactCollection;
