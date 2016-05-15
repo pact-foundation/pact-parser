@@ -24,8 +24,8 @@ describe('Pact specification v.1.0 compliance', function () {
         var exp = new Request(spec.expected),
           act = new Request(spec.actual);
         expect(exp.match(act)).to.equal(spec.match);
-      })
-    })
+      });
+    });
   });
 
 });
