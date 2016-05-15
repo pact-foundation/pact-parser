@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint .",
-    "test": "mocha test/**/*.spec.js",
-    "test:cover": "istanbul cover _mocha -- test/**/*.spec.js",
-    "test:travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- test/**/*.spec.js",
-    "debug:test": "mocha --debug-brk test/**/*.spec.js"
+    "test": "mocha test/*",
+    "test:cover": "istanbul cover _mocha -- test/*",
+    "test:travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- test/*",
+    "debug:test": "mocha --debug-brk test/*"
   },
   "repository": {
     "type": "git",

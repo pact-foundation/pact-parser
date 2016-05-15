@@ -1,6 +1,6 @@
 'use strict';
 
-function RequestMatchHelper(list, request) {
+function RequestsMatchHelper(list, request) {
   var result, i;
   for (i = 0; i < list.length; i++) {
     result = list[i].match(request);
@@ -9,4 +9,4 @@ function RequestMatchHelper(list, request) {
   return result;
 }
 
-module.exports = RequestMatchHelper;
+module.exports = RequestsMatchHelper;
