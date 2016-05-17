@@ -29,7 +29,32 @@ function fieldsContinedInOtherObject(expHeaders, reqHeaders) {
   return true;
 }
 
+
+/**
+ * This function is used to create GET request
+ * query strings from objects created by express
+ * middleware.
+ * 
+ * @param queryParams - query parameters in tring or object presentation
+ * @returns string representation of query parametes
+ */
+function parseQueryParams(queryParams) {
+  queryParams = queryParams ? queryParams : {};
+  if (typeof (queryParams) == 'object') {
+    var str = [];
+    for (var p in queryParams)
+      if (queryParams.hasOwnProperty(p)) {
+        str.push(encodeURIComponent(p) +
+          '=' +
+          encodeURIComponent(queryParams[p]));
+      }
+    return str.join('&');
+  }
+  return queryParams;
+}
+
 module.exports = {
   makeHeaderNamesLowerCaseRemoveSpaces: initialHeadersTransform,
-  areAllExpectationHeadersPesentInRequest: fieldsContinedInOtherObject
+  areAllExpectationHeadersPesentInRequest: fieldsContinedInOtherObject,
+  parseQueryParams: parseQueryParams
 };
