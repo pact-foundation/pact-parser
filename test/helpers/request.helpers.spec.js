@@ -63,33 +63,45 @@ describe('Helpers', function () {
 
 
     });
-    
-    
+
+
     describe('.parseQueryParams', function () {
       var fn = RequestHelpers.parseQueryParams,
-        expHeaders;
-        
-        it('parse query parameters object into string', function () {
-          
-        });
-        
-        it('should return empty string if query params object is emtpy', function () {
-          
-        });
-        
-        it('should return passed string', function () {
-          
-        });
-        
-        it('should encode query params object parts', function () {
-          
-        });
-        
-        
-        
-        
+        queryParams, expected, actual;
+
+      it('parse query parameters object into string', function () {
+        queryParams = { name: 'test', page: '1', offset: 10 };
+        expected = 'name=test&page=1&offset=10';
+        actual = fn(queryParams);
+        expect(actual).to.equal(expected);
+      });
+
+      it('should return empty string if query params object is emtpy', function () {
+        queryParams = {};
+        expected = '';
+        actual = fn(queryParams);
+        expect(actual).to.equal(expected);
+      });
+
+      it('should return passed string', function () {
+        queryParams = 'name=test&page=1&offset=10';
+        expected = 'name=test&page=1&offset=10';
+        actual = fn(queryParams);
+        expect(actual).to.equal(expected);
+      });
+
+      it('should encode query params object parts', function () {
+        queryParams = { name: 'test+name', page: '1', offset: 10 };
+        expected = 'name=test%2Bname&page=1&offset=10';
+        actual = fn(queryParams);
+        expect(actual).to.equal(expected);
+      });
+
+
+
+
     });
-    
+
 
   });
 });
