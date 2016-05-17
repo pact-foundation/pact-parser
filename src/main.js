@@ -10,7 +10,11 @@ function PactParser(pactFiles, port) {
   port = port || pactConfig.PORT;
   app.set('port', port);
   
-  app.use(bodyParser.json());
+  var options = {
+    // force not to parse url get query part
+    extended: false
+  };
+  app.use(bodyParser.json(options));
   app.use(PactCheckerMiddleware(pactFiles));
   
   return app;

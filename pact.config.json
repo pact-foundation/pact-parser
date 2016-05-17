@@ -2,7 +2,7 @@
   "PORT": 8080,
   "test": {
     "supertest": {
-      "path": "/testData/*.json"
+      "path": "testData/*.json"
     }
   }
 }

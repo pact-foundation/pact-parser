@@ -3,18 +3,17 @@
 var request = require('supertest'),
   glob = require('glob'),
   path = require('path'),
-  config = require('../pact.config.json').test.supertest,
+  config = require('../pact.config.json'),
   app = require('../src/main.js'),
   pactFiles = [];
   
-  
-glob.sync(config.path).forEach(function (file) {
+glob.sync(config.test.supertest.path).forEach(function (file) {
   pactFiles.push(require(path.resolve(file)));
 });
   
 app = app(pactFiles);
   
-describe.only('GET /alligators/Mary', function() {
+describe('GET /alligators/Mary', function() {
   it('respond with json', function(done) {
     request(app)
       .get('/alligators/Mary')

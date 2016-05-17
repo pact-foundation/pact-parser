@@ -1,7 +1,8 @@
 'use strict';
 
 var _ = require('underscore'),
-  helpers = require('../helpers/request.helpers.js');
+  helpers = require('../helpers/request.helpers.js'),
+  querystring = require('querystring');
 
 function Request(options) {
   this.method = options.method && options.method.toLowerCase();
@@ -21,10 +22,28 @@ Request.prototype.match = function (request) {
   var isMethodTheSame = request.method && request.method.toLowerCase();
   isMethodTheSame = _.isEqual(this.method, isMethodTheSame);
 
+  function parseQueryParams(queryParams) {
+    queryParams = queryParams ? queryParams : {};
+    if (typeof (queryParams) == 'object') {
+      var str = [];
+      for (var p in queryParams)
+        if (queryParams.hasOwnProperty(p)) {
+          str.push(encodeURIComponent(p) +
+            '=' +
+            encodeURIComponent(queryParams[p]));
+        }
+      return str.join('&');
+    }
+    return queryParams;
+  }
+
+  var expQuery = decodeURIComponent(this.query),
+    reqQuery = decodeURIComponent(request.query),
+    queryEquals = _.isEqual(parseQueryParams(expQuery), parseQueryParams(reqQuery));
+
   return isMethodTheSame &&
     _.isEqual(this.path, request.path) &&
-    _.isEqual(decodeURIComponent(this.query), decodeURIComponent(request.query)) &&
-    // https://github.com/realestate-com-au/pact/wiki/Matching-gotchas
+    queryEquals &&
     helpers.areAllExpectationHeadersPesentInRequest(this.headers, request.headers) &&
     _.isEqual(this.body, request.body);
 };
