@@ -22,28 +22,12 @@ Request.prototype.match = function (request) {
   var isMethodTheSame = request.method && request.method.toLowerCase();
   isMethodTheSame = _.isEqual(this.method, isMethodTheSame);
 
-  function parseQueryParams(queryParams) {
-    queryParams = queryParams ? queryParams : {};
-    if (typeof (queryParams) == 'object') {
-      var str = [];
-      for (var p in queryParams)
-        if (queryParams.hasOwnProperty(p)) {
-          str.push(encodeURIComponent(p) +
-            '=' +
-            encodeURIComponent(queryParams[p]));
-        }
-      return str.join('&');
-    }
-    return queryParams;
-  }
-
-  var expQuery = decodeURIComponent(parseQueryParams(this.query)),
-    reqQuery = decodeURIComponent(parseQueryParams(request.query)),
-    queryEquals = _.isEqual(expQuery, reqQuery);
+  var expQuery = decodeURIComponent(helpers.parseQueryParams(this.query)),
+    reqQuery = decodeURIComponent(helpers.parseQueryParams(request.query));
 
   return isMethodTheSame &&
     _.isEqual(this.path, request.path) &&
-    queryEquals &&
+    _.isEqual(expQuery, reqQuery) &&
     helpers.areAllExpectationHeadersPesentInRequest(this.headers, request.headers) &&
     _.isEqual(this.body, request.body);
 };

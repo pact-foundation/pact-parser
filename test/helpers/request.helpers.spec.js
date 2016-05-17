@@ -5,7 +5,6 @@ var expect = require('chai').expect,
 
 describe('Helpers', function () {
   describe('Request Helpers', function () {
-
     describe('.makeHeaderNamesLowerCaseRemoveSpaces', function () {
       var fn = RequestHelpers.makeHeaderNamesLowerCaseRemoveSpaces,
         headers;
@@ -28,8 +27,6 @@ describe('Helpers', function () {
 
 
     });
-
-
     describe('.areAllExpectationHeadersPesentInRequest', function () {
 
       var fn = RequestHelpers.areAllExpectationHeadersPesentInRequest,
@@ -63,8 +60,6 @@ describe('Helpers', function () {
 
 
     });
-
-
     describe('.parseQueryParams', function () {
       var fn = RequestHelpers.parseQueryParams,
         queryParams, expected, actual;
@@ -101,7 +96,5 @@ describe('Helpers', function () {
 
 
     });
-
-
   });
 });
