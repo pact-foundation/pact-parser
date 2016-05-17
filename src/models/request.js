@@ -37,9 +37,9 @@ Request.prototype.match = function (request) {
     return queryParams;
   }
 
-  var expQuery = decodeURIComponent(this.query),
-    reqQuery = decodeURIComponent(request.query),
-    queryEquals = _.isEqual(parseQueryParams(expQuery), parseQueryParams(reqQuery));
+  var expQuery = decodeURIComponent(parseQueryParams(this.query)),
+    reqQuery = decodeURIComponent(parseQueryParams(request.query)),
+    queryEquals = _.isEqual(expQuery, reqQuery);
 
   return isMethodTheSame &&
     _.isEqual(this.path, request.path) &&
