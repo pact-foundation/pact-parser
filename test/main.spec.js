@@ -14,7 +14,7 @@ glob.sync(config.test.supertest.path).forEach(function (file) {
   
 app = app(pactFiles);
   
-describe.only('GET /alligators/Mary', function() {
+describe('GET /alligators/Mary', function() {
   it('respond with resouce with name Mary', function(done) {
     request(app)
       .get('/alligators/Mary/found')
