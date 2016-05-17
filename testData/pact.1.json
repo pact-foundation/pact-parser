@@ -11,7 +11,7 @@
       "provider_state": "there is an alligator named Mary",
       "request": {
         "method": "get",
-        "path": "/alligators/Mary",
+        "path": "/alligators/Mary/found",
         "headers": {
           "Accept": "application/json"
         }
@@ -31,7 +31,7 @@
       "provider_state": "there is not an alligator named Mary",
       "request": {
         "method": "get",
-        "path": "/alligators/Mary",
+        "path": "/alligators/Mary/not-found",
         "headers": {
           "Accept": "application/json"
         }
@@ -45,7 +45,7 @@
       "provider_state": "an error occurs retrieving an alligator",
       "request": {
         "method": "get",
-        "path": "/alligators/Mary",
+        "path": "/alligators/Mary/server-error",
         "headers": {
           "Accept": "application/json"
         }

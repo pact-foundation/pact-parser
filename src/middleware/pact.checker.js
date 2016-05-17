@@ -11,7 +11,7 @@ var PactChecker = function (pactFiles) {
     if (response) {
       res.status(response.status).send(response.body);
     } else {
-      res.status(500).send('No interaction found for your request');
+      res.status(500).json({ error: 'No interaction found for your request'});
     }
   };
 };

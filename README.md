@@ -24,9 +24,13 @@ As **pact-mock-service*** is in-memory structure we should every time we would l
 
 # ToDo List
 
-1. Add possibility to specify port of the server at start-up.
-2. 
+1. Create more test pacts and create more api tests.
+2. Update README with guide how to use the application.
+3. Introduce logging and log level control via command line arguments.
+
 
 # Done List
 
 1. Simple json file parser that is able to respond to listed requests;
+2. Align with pact v.1.0 specification for requests parsing;
+3. Added possibility to specify port of the server at start-up;
