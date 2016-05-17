@@ -17,9 +17,14 @@
   },
   "keywords": [
     "pact",
+    "consumer driven contract",
+    "testing",
     "js"
   ],
-  "author": "ichyr",
+  "author": "Ivan Chyr <zmii@plast.org.ua>",
+  "contributors": [
+    "Ivan Chyr <zmii@plast.org.ua>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ichyr/pact-parser/issues"
@@ -44,5 +49,8 @@
     "underscore": "^1.8.3",
     "url": "^0.11.0",
     "yargs": "^3.32.0"
+  },
+  "engines": {
+    "node": ">=0.12"
   }
 }
