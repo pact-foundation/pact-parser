@@ -63,6 +63,33 @@ describe('Helpers', function () {
 
 
     });
+    
+    
+    describe('.parseQueryParams', function () {
+      var fn = RequestHelpers.parseQueryParams,
+        expHeaders;
+        
+        it('parse query parameters object into string', function () {
+          
+        });
+        
+        it('should return empty string if query params object is emtpy', function () {
+          
+        });
+        
+        it('should return passed string', function () {
+          
+        });
+        
+        it('should encode query params object parts', function () {
+          
+        });
+        
+        
+        
+        
+    });
+    
 
   });
 });
