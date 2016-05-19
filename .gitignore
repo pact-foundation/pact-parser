@@ -1,5 +1,5 @@
 npm-debug.log
-
+src/coverageconfig.json
 node_modules/
 coverage/
 .vscode/
