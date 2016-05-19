@@ -1,8 +1,7 @@
 'use strict';
 
 var _ = require('underscore'),
-  helpers = require('../helpers/request.helpers.js'),
-  querystring = require('querystring');
+  helpers = require('../helpers/request.helpers.js');
 
 function Request(options) {
   this.method = options.method && options.method.toLowerCase();

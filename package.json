@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "body-parser": "^1.15.0",
+    "bunyan": "^1.8.1",
     "express": "^4.13.4",
     "glob": "^6.0.4",
     "underscore": "^1.8.3",
