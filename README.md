@@ -8,6 +8,36 @@
 
 This application is devoted to parsing json files that represent [pacts](https://github.com/pact-foundation/pact-specification), spawning express server and replaying responses for requests read from pact files.
 
+## How to use?
+
+Clone the repository and run `npm install`.
+
+1. To use as a command line tool you must run the following command.
+
+`node index.js --path <path to your pact json files> (--port 3646) (--log warning)`
+
+*Parameters in parenthesis are optional. More information about then can be found [here](#command-line-parameters).*
+
+## Command line parameters
+
+Application has some cli parameters used to customize it's behavior:
+
+1. `path` - [REQUIRED] specifies **glob** pattern for the path where pact jsons are place in the system. 
+
+`--path testData/*.json`
+
+2. `log` - specifies the log level you want to have. Possible variants are: `trace`, `debug`, `info`, `warn`, `error`, `fatal`.
+Setting this to a particular level implies that all log records at that level and above are logged. 
+**E.g.** a logger set to level "info" will log records at level info and above (warn, error, fatal).
+
+Default level is `info`. Default value is locatied in configuration file (`pact.config.json` in the root).
+
+`--log debug`
+
+3. `port` - specifies the port server would start. Defaults to `8080`. Default value is locatied in configuration file (`pact.config.json` in the root).
+
+`--port 3646`
+
 ## Why we need such application?
 
 Pacts are great at building the contracts for consumer-provider interaction, but they are also great in one more thing - **possibility to use them as data for consumer-side tests**. Current client-side approach for building pact files during front-end testing relies on the pair of libraries:
