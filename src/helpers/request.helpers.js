@@ -49,6 +49,9 @@ function parseQueryParams(queryParams) {
           encodeURIComponent(queryParams[p]));
       }
     return str.join('&');
+  } else {
+    var a = queryParams;
+    a = a[a.length - 1] !== '&' ? a : a.slice(0, a.length - 1);
   }
   return queryParams;
 }
