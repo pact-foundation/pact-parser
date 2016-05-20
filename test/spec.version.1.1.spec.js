@@ -21,6 +21,9 @@ describe.only('Pact specification v.1.1 compliance', function () {
 
     requestFiles.forEach(function (spec) {
       it(spec.comment, function () {
+        if(spec.comment == 'Trailing amperands can be ignored') {
+          1+1;
+        }
         var exp = new Request(spec.expected),
           act = new Request(spec.actual);
         expect(exp.match(act)).to.equal(spec.match);
