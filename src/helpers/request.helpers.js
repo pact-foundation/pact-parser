@@ -55,8 +55,22 @@ function parseQueryParams(queryParams) {
   }
 }
 
+function parseQueryStringToObject(query) {
+  if (!query) { return {}; }
+  var temp = query.split('&');
+  var result = {};
+  for (var i = 0; i < temp.length; i++) {
+    var a = temp[i].split('=')
+    if (a[1] && !a[2]) {
+      result[a[0]] = a[1];
+    }
+  }
+  return result;
+}
+
 module.exports = {
   makeHeaderNamesLowerCaseRemoveSpaces: initialHeadersTransform,
   areAllExpectationHeadersPesentInRequest: fieldsContinedInOtherObject,
-  parseQueryParams: parseQueryParams
+  parseQueryParams: parseQueryParams,
+  getQueryObject: parseQueryStringToObject
 };

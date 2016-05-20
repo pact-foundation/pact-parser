@@ -8,7 +8,7 @@ var expect = require('chai').expect,
   path = require('path'),
   Request = require('../src/models/request');
 
-describe.only('Pact specification v.1.1 compliance', function () {
+describe('Pact specification v.1.1 compliance', function () {
   // todo extract this into some kind of configuration
   var pactSpecPath = 'test/specification/version.1.1';
 
@@ -21,7 +21,7 @@ describe.only('Pact specification v.1.1 compliance', function () {
 
     requestFiles.forEach(function (spec) {
       it(spec.comment, function () {
-        if(spec.comment == 'Trailing amperands can be ignored') {
+        if(spec.comment == 'Queries are the same - multiple values are in same order') {
           1+1;
         }
         var exp = new Request(spec.expected),

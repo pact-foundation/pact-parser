@@ -93,6 +93,31 @@ describe('Helpers', function () {
       });
 
 
+      describe('.getQueryObject', function () {
+        var fn = RequestHelpers.getQueryObject;
+
+
+        it('should return object', function () {
+          expect(fn()).to.deep.equal({});
+        });
+
+        it('should return empty object is not valid query string', function () {
+          var query = 'blablabla';
+          expect(fn(query)).to.deep.equal({});
+        });
+        
+        it('should not take into considertion trailig ampersand', function () {
+          var query = 'name=Jade&';
+          expect(fn(query)).to.deep.equal({'name': 'Jade'});
+        });
+        
+        it('should return object with query parameters', function () {
+          var query = 'name=Jade&age=123';
+          expect(fn(query)).to.deep.equal({'name': 'Jade', age: '123'});
+        });
+
+      });
+
 
 
     });
