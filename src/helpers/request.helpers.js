@@ -60,7 +60,7 @@ function parseQueryStringToObject(query) {
   var temp = query.split('&');
   var result = {};
   for (var i = 0; i < temp.length; i++) {
-    var a = temp[i].split('=')
+    var a = temp[i].split('=');
     if (a[1] && !a[2]) {
       result[a[0]] = a[1];
     }

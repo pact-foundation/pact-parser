@@ -26,7 +26,7 @@ Request.prototype.match = function (request) {
 
   return isMethodTheSame &&
     _.isEqual(this.path, request.path) &&
-    _.isEqual(expQuery, reqQuery) &&
+    (_.isEqual(expQuery, reqQuery)) &&
     helpers.areAllExpectationHeadersPesentInRequest(this.headers, request.headers) &&
     _.isEqual(this.body, request.body);
 };

@@ -21,7 +21,7 @@ describe('Pact specification v.1.1 compliance', function () {
 
     requestFiles.forEach(function (spec) {
       it(spec.comment, function () {
-        if(spec.comment == 'Queries are the same - multiple values are in same order') {
+        if(spec.comment == "Queries are not the same - values are in different order") {
           1+1;
         }
         var exp = new Request(spec.expected),
